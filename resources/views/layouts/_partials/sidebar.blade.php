@@ -26,6 +26,14 @@
             <span class="menu-title">Dashboard</span>
           </a>
         </div>
+
+        <div class="menu-item pt-5">
+          <div class="menu-content">
+            <span class="menu-heading fw-bold text-uppercase fs-7">
+              Survey
+            </span>
+          </div>
+        </div>
         
           <div class="menu-item">
             <a class="menu-link @if($title == 'User') active @endif" href="{{ route('user') }}">
