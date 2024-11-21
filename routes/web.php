@@ -2,19 +2,21 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ComprehensionSurveyController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\SatisfactionSurveyController;
 use App\Http\Controllers\SurveyController;
 
 Route::get('/', [MainController::class, 'index'])->name('home');
 
 Route::prefix('/survey')->group(function () {
-    Route::get('/survei-kepuasan-layanan-penelitian-pengabdian', [SurveyController::class, 'satisfactionSurvey'])->name('satisfaction-survey');
-    Route::post('/survei-kepuasan-layanan-penelitian-pengabdian', [SurveyController::class, 'satisfactionSurveyStore'])->name('satisfaction-survey.store');
-    Route::get('/survei-pemahaman-panduan-penelitian-dan-pengabdian', [SurveyController::class, 'comprehensionSurvey'])->name('comprehension-survey');
-    Route::post('/survei-pemahaman-panduan-penelitian-dan-pengabdian', [SurveyController::class, 'comprehensionSurveyStore'])->name('comprehension-survey.store');
+    Route::get('/survei-kepuasan-layanan-penelitian-pengabdian', [SatisfactionSurveyController::class, 'satisfactionSurvey'])->name('satisfaction-survey');
+    Route::post('/survei-kepuasan-layanan-penelitian-pengabdian', [SatisfactionSurveyController::class, 'satisfactionSurveyStore'])->name('satisfaction-survey.store');
+    Route::get('/survei-pemahaman-panduan-penelitian-dan-pengabdian', [ComprehensionSurveyController::class, 'comprehensionSurvey'])->name('comprehension-survey');
+    Route::post('/survei-pemahaman-panduan-penelitian-dan-pengabdian', [ComprehensionSurveyController::class, 'comprehensionSurveyStore'])->name('comprehension-survey.store');
 });
 
 Route::prefix('/auth')->group(function () {

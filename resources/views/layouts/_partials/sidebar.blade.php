@@ -34,7 +34,33 @@
             </span>
           </div>
         </div>
+
+        <div class="menu-item">
+          <a class="menu-link">
+            <span class="menu-icon">
+              <i class="ki-outline ki-questionnaire-tablet fs-2"></i>
+            </span>
+            <span class="menu-title">Survei Pemahaman Panduan</span>
+          </a>
+        </div>
         
+        <div class="menu-item">
+          <a class="menu-link">
+            <span class="menu-icon">
+              <i class="ki-outline ki-questionnaire-tablet fs-2"></i>
+            </span>
+            <span class="menu-title">Survei Kepuasan Layanan</span>
+          </a>
+        </div>
+        
+        <div class="menu-item pt-5">
+          <div class="menu-content">
+            <span class="menu-heading fw-bold text-uppercase fs-7">
+              Setting
+            </span>
+          </div>
+        </div>
+
           <div class="menu-item">
             <a class="menu-link @if($title == 'User') active @endif" href="{{ route('user') }}">
               <span class="menu-icon">
