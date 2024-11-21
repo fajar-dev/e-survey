@@ -2,22 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ComprehensionSurveyExport;
 use Illuminate\Http\Request;
 use App\Models\ComprehensionSurvey;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Validator;
 
 class ComprehensionSurveyController extends Controller
 {
-    public function comprehensionSurvey(){
+    public function index(){
         $data = [
-            'title' => 'Survei Pemahaman Panduan Penelitian dan Pengabdian',
+            'title' => 'Survei Pemahaman Panduan',
             'subTitle' => null,
             'page_id' => null,
         ];
         return view('main.comprehension-survey',  $data);
     }
 
-    public function comprehensionSurveyStore(Request $request){
+    public function store(Request $request){
         $validator = Validator::make($request->all(), [
             'name'     => 'required|string|max:255',
             'faculty'  => 'required|in:Teknik,Ekonomi,Pertanian,FISIP,Hukum,Kedokteran,FKIP',
@@ -53,5 +55,19 @@ class ComprehensionSurveyController extends Controller
         $survey->save();
 
         return redirect()->route('home')->with('success', 'Survey has been submitted successfully');
+    }
+
+    public function read(){
+        $data = [
+            'title' => 'Respondent',
+            'subTitle' => 'Survei Pemahaman Panduan',
+            'page_id' => null,
+            'data' => ComprehensionSurvey::all()
+        ];
+        return view('pages.survey.comprehension-survey',  $data);
+    }
+
+    public function export(){
+        return Excel::download(new ComprehensionSurveyExport, 'survei-pemahaman-panduan.xlsx');
     }
 }

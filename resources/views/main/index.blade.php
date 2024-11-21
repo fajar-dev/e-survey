@@ -36,7 +36,7 @@
                         </div>
                     </div>  
                     <div class="d-flex text-start">             
-                      <span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-3 d-block">Survei kepuasan layanan, penelitian, pengabdian</span>             
+                      <span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-3 d-block">Survei kepuasan layanan</span>             
                     </div> 
                 </div>
                 <div class="card-footer d-flex flex-stack pt-0">  
@@ -54,7 +54,7 @@
                       </div>
                   </div>  
                     <div class="d-flex text-start">             
-                      <span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-3 d-block">Survei pemahaman panduan penelitian dan pengabdian</span>           
+                      <span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-3 d-block">Survei pemahaman panduan</span>           
                     </div> 
                 </div>
                 <div class="card-footer d-flex flex-stack pt-0">  

@@ -13,10 +13,10 @@ use App\Http\Controllers\SurveyController;
 Route::get('/', [MainController::class, 'index'])->name('home');
 
 Route::prefix('/survey')->group(function () {
-    Route::get('/survei-kepuasan-layanan-penelitian-pengabdian', [SatisfactionSurveyController::class, 'satisfactionSurvey'])->name('satisfaction-survey');
-    Route::post('/survei-kepuasan-layanan-penelitian-pengabdian', [SatisfactionSurveyController::class, 'satisfactionSurveyStore'])->name('satisfaction-survey.store');
-    Route::get('/survei-pemahaman-panduan-penelitian-dan-pengabdian', [ComprehensionSurveyController::class, 'comprehensionSurvey'])->name('comprehension-survey');
-    Route::post('/survei-pemahaman-panduan-penelitian-dan-pengabdian', [ComprehensionSurveyController::class, 'comprehensionSurveyStore'])->name('comprehension-survey.store');
+    Route::get('/survei-kepuasan-layanan', [SatisfactionSurveyController::class, 'index'])->name('satisfaction-survey');
+    Route::post('/survei-kepuasan-layanan', [SatisfactionSurveyController::class, 'store'])->name('satisfaction-survey.store');
+    Route::get('/survei-pemahaman-panduan', [ComprehensionSurveyController::class, 'index'])->name('comprehension-survey');
+    Route::post('/survei-pemahaman-panduan', [ComprehensionSurveyController::class, 'store'])->name('comprehension-survey.store');
 });
 
 Route::prefix('/auth')->group(function () {
@@ -30,6 +30,13 @@ Route::prefix('/auth')->group(function () {
 
 Route::get('/auth/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware(['auth']);
+
+Route::prefix('/respondent')->group(function () {
+    Route::get('/survei-pemahaman-panduan', [ComprehensionSurveyController::class, 'read'])->name('comprehension-survey.read');
+    Route::get('/survei-pemahaman-panduan/export', [ComprehensionSurveyController::class, 'export'])->name('comprehension-survey.export');
+    Route::get('/survei-kepuasan-layanan', [SatisfactionSurveyController::class, 'read'])->name('satisfaction-survey.read');
+    Route::get('/survei-kepuasan-layanan/export', [SatisfactionSurveyController::class, 'export'])->name('satisfaction-survey.export');
+})->middleware(['auth']);
 
 Route::prefix('/user')->group(function () {
     Route::get('/', [UserController::class, 'user'])->name('user');

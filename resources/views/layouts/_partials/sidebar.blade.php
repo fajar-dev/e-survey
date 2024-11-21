@@ -30,13 +30,13 @@
         <div class="menu-item pt-5">
           <div class="menu-content">
             <span class="menu-heading fw-bold text-uppercase fs-7">
-              Survey
+              Respondent
             </span>
           </div>
         </div>
 
         <div class="menu-item">
-          <a class="menu-link">
+          <a class="menu-link @if($subTitle == 'Survei Pemahaman Panduan') active @endif" href="{{ route('comprehension-survey.read') }}">
             <span class="menu-icon">
               <i class="ki-outline ki-questionnaire-tablet fs-2"></i>
             </span>
@@ -45,7 +45,7 @@
         </div>
         
         <div class="menu-item">
-          <a class="menu-link">
+          <a class="menu-link @if($subTitle == 'Survei Kepuasan Layanan') active @endif" href="{{ route('satisfaction-survey.read') }}">
             <span class="menu-icon">
               <i class="ki-outline ki-questionnaire-tablet fs-2"></i>
             </span>

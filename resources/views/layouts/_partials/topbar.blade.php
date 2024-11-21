@@ -32,25 +32,6 @@
         </div>
       </div>
       <div class="d-flex">
-        <div class="app-navbar-item ms-1 ms-md-3">
-          <div class="btn btn-icon btn-custom btn-color-gray-600 btn-active-light btn-active-color-primary w-35px h-35px w-md-40px h-md-40px" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
-            <i class="ki-outline ki-notification-on fs-1"></i>
-          </div>
-          <div class="menu menu-sub menu-sub-dropdown menu-column w-350px w-lg-375px" data-kt-menu="true" id="kt_menu_notifications">
-            <div class="d-flex flex-column bgi-no-repeat rounded-top" style="background-image:url({{ asset('assets/img/billboard-bg.png') }})">
-              <h3 class="text-dark fw-bold px-9 my-8">Notifications</h3>
-            </div>
-            <div class="tab-content">
-              <div class="tab-pane fade show active" id="kt_topbar_notifications_2" role="tabpanel">
-                <div class="d-flex flex-column px-9">
-                  <div class="py-5 text-center">
-                    ~ No data available ~
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
           <div class="app-navbar-item ms-1 ms-md-3">
             <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="left-start" data-kt-menu-offset="90px, -40px" class="btn btn-icon btn-custom btn-color-gray-600 btn-active-light btn-active-color-primary w-35px h-35px w-md-40px h-md-40px" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
               <span>

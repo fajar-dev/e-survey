@@ -2,22 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\SatisfactionSurveyExport;
 use Illuminate\Http\Request;
 use App\Models\SatisfactionSurvey;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Validator;
 
 class SatisfactionSurveyController extends Controller
 {
-    public function satisfactionSurvey(){
+    public function index(){
         $data = [
-            'title' => 'Survei Kepuasan Layanan, Penelitian, Pengabdian',
+            'title' => 'Survei Kepuasan Layanan',
             'subTitle' => null,
             'page_id' => null,
         ];
         return view('main.satisfaction-survey',  $data);
     }
 
-    public function satisfactionSurveyStore(Request $request){
+    public function store(Request $request){
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'faculty' => 'required|in:Teknik,Ekonomi,Pertanian,FISIP,Hukum,Kedokteran,FKIP',
@@ -53,5 +55,19 @@ class SatisfactionSurveyController extends Controller
         $survey->save();
 
         return redirect()->route('home')->with('success', 'Survey has been submitted successfully');
+    }
+
+    public function read(){
+        $data = [
+            'title' => 'Respondent',
+            'subTitle' => 'Survei Kepuasan Layanan',
+            'page_id' => null,
+            'data' => SatisfactionSurvey::all()
+        ];
+        return view('pages.survey.satisfaction-survey',  $data);
+    }
+
+    public function export(){
+        return Excel::download(new SatisfactionSurveyExport, 'survei-kepuasan-pelayanan.xlsx');
     }
 }
