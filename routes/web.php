@@ -19,6 +19,10 @@ Route::prefix('/survey')->group(function () {
     Route::post('/survei-pemahaman-panduan', [ComprehensionSurveyController::class, 'store'])->name('comprehension-survey.store');
 });
 
+Route::get('/admin', function () {
+    return redirect()->route('login');
+});
+
 Route::prefix('/auth')->group(function () {
     Route::get('/login', [AuthController::class, 'login'])->name('login');
     Route::post('/login', [AuthController::class, 'loginSubmit'])->name('login.submit');

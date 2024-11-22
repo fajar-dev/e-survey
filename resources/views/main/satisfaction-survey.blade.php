@@ -37,7 +37,7 @@
                     <!-- Fakultas -->
                     <div class="mb-10">
                       <label for="faculty" class="required form-label">Fakultas</label>
-                      @foreach(['Teknik', 'Ekonomi', 'Pertanian', 'FISIP', 'Hukum', 'Kedokteran', 'FKIP'] as $faculty)
+                      @foreach(['Teknik', 'Ekonomi', 'Pertanian', 'FISIP', 'Hukum', 'Kedokteran', 'FKIP', 'Perikanan dan Kelautan'] as $faculty)
                         <div class="form-check form-check-custom form-check-solid mb-3 ps-4">
                           <input class="form-check-input" type="radio" name="faculty" value="{{ $faculty }}" id="faculty{{ $faculty }}" {{ old('faculty') === $faculty ? 'checked' : '' }} />
                           <label class="form-check-label" for="faculty{{ $faculty }}">Fakultas {{ $faculty }}</label>

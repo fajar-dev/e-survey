@@ -29,24 +29,6 @@
       <div class="container" id="tentang" data-kt-scroll-offset="{default: 100, lg: 150}">
         <div class="row justify-content-center">
           <div class="col-sm-6 col-xxl-3">
-            <div class="card card-flush">  
-                <div class="card-body text-center pb-5"> 
-                    <div class="rounded-3">      
-                        <div class="bgi-no-repeat bgi-position-center card-rounded mb-7" style="height: 150px;background-image:url('https://layanan.unimal.ac.id/assets/frontend/images/bg-bagian/img2.jpg')">                     
-                        </div>
-                    </div>  
-                    <div class="d-flex text-start">             
-                      <span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-3 d-block">Survei kepuasan layanan</span>             
-                    </div> 
-                </div>
-                <div class="card-footer d-flex flex-stack pt-0">  
-                    <a href="{{route('satisfaction-survey')}}" class="btn btn-primary flex-shrink-0 me-2 w-100" >
-                        Mulai Survei     
-                    </a>
-                </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-xxl-3">
             <div class="card card-flush h-xl-100">  
                 <div class="card-body text-center pb-5"> 
                   <div class="d-block overlay rounded-3">      
@@ -59,6 +41,24 @@
                 </div>
                 <div class="card-footer d-flex flex-stack pt-0">  
                     <a href="{{route('comprehension-survey')}}" class="btn btn-primary flex-shrink-0 me-2 w-100" >
+                        Mulai Survei     
+                    </a>
+                </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xxl-3">
+            <div class="card card-flush">  
+                <div class="card-body text-center pb-5"> 
+                    <div class="rounded-3">      
+                        <div class="bgi-no-repeat bgi-position-center card-rounded mb-7" style="height: 150px;background-image:url('https://layanan.unimal.ac.id/assets/frontend/images/bg-bagian/img2.jpg')">                     
+                        </div>
+                    </div>  
+                    <div class="d-flex text-start">             
+                      <span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-3 d-block">Survei kepuasan layanan</span>             
+                    </div> 
+                </div>
+                <div class="card-footer d-flex flex-stack pt-0">  
+                    <a href="{{route('satisfaction-survey')}}" class="btn btn-primary flex-shrink-0 me-2 w-100" >
                         Mulai Survei     
                     </a>
                 </div>
